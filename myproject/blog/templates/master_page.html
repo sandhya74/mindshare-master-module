@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card-body">
+
+    <h4 style="text-align: center;font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-weight: bolder;">Inventory Material List</h4>
+    
+    <!-- <button type="button" style="float: right;" style='margin-right:16px'><a  href="">Transaction</a></button>
+    <button type="button" style="float: right;" style="margin:5px;"><a  href="/material_list">Master</a></button> -->
+    <div style="margin: 8 auto; width:200px; float:right">
+    <input type="button" id=""  value="Master" onclick="newDoc()"  >
+    <input type="button" id=""  value="Transaction " onclick="" >       
+    
+    </div>
+    <script>
+        function newDoc() {
+        window.location.assign("/material_list")
+
+}
+    </script>
+    
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col" style="display:none">id</th>
+                <th scope="col">Material Code</th>
+                <th scope="col">Material Name</th>
+                <th scope="col">Material Location</th>
+                <!-- <th scope="col">Unit of Measurement</th>
+                <th scope="col">Maximum Level</th>
+                <th scope="col">Minimum Level</th> -->
+                <th scope="col">Re-Order Level</th>
+                <th scope="col" style="display:none">Quantity</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for materials in material %}
+            <tr>
+
+                <td><input type="checkbox"><a href="/main_list/{{materials.id}}">view</a></td>
+                <td style="display:none">{{ materials.id}}</td>
+                <td>{{ materials.Material_Code}}</td>
+                <td>{{ materials.Material_Name}}</td>
+                <td>{{ materials.Material_Location }}</td>
+                <!-- <td>{{ materials.Unit_of_Measurement}}</td>
+                <td>{{ materials.Maximum_Level}}</td>
+                <td>{{ materials.Minimum_Level}}</td> -->
+                <td>{{ materials.Re_order_Level}}</td>
+                <td style="display:none">{{ materials.Quantity}}</td>
+                
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    
+</div>
+{% endblock %}
+
+
