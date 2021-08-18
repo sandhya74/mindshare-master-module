@@ -18,7 +18,7 @@ th, td {
 <body>
 
 <center><h2 style="font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: bolder;">BIN CARD - {{material.Material_Name}}</h2></center>
+  font-weight: bolder;margin: 10 auto;">BIN CARD - {{material.Material_Name}}</h2></center>
 
 
 
@@ -38,7 +38,7 @@ th, td {
         </td>
         <td colspan="4" style="background-color: lightblue;">Maximum Level : {{material.Maximum_Level}}<br>
                         Minimum Level : {{material.Minimum_Level}}<br>
-                        Re-Order Level : {{Re_order_Level}}<br>
+                        Re-Order Level : {{material.Re_order_Level}}<br>
                         Quantity : {{material.Quantity}}<br>
         </td>
   </tr>
@@ -74,7 +74,7 @@ th, td {
 </tbody>
 </table>
 
-  <center><button type="button" onclick="Back()" style="height: 30px;width:100px; margin-top: 5%;">Back</button></center>
+  <center><button type="button" onclick="Back()" style="margin: 10 auto; width:100px;  float:right; position:absolute;top:-30px;right:100px;height: 30px;width:100px; margin-top: 5%;">Back</button></center>
   
 <script>
   function Back() {
