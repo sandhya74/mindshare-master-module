@@ -1,15 +1,45 @@
-{% extends "base.html" %}
+
 {% block content %}
+<style type="text/css">
+ 
+    table {
+    font-family: "Lato","sans-serif";   }       /* added custom font-family  */
+     
+    table.one {                                  
+    margin-bottom: 3em; 
+    border-collapse:collapse;   }   
+     
+    td {                            /* removed the border from the table data rows  */
+    text-align: center;     
+    width: 14em;                    
+    padding: 8px;;       }       
+     
+    th {                              /* removed the border from the table heading row  */
+    text-align: center;                 
+    padding: 8px;
+    background-color: #696464;       /* added a red background color to the heading cells  */
+    color: white;       }                 /* added a white font color to the heading text */
+     
+    tr {    
+    height: 1em;    }
+     
+    table tr:nth-child(even) {            /* added all even rows a #eee color  */
+        background-color: #eee;     }
+     
+    table tr:nth-child(odd) {            /* added all odd rows a #fff color  */
+    background-color:#fff;      }
+     
+    </style>
 
 <div class="card-body">
 
     <h4 style="text-align: center;font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-    font-weight: bolder;">Inventory Material List</h4>
+    font-weight: bolder; font-size: 200%;">Inventory Material List</h4>
     
     <!-- <button type="button" style="float: right;" style='margin-right:16px'><a  href="">Transaction</a></button>
     <button type="button" style="float: right;" style="margin:5px;"><a  href="/material_list">Master</a></button> -->
-    <div style="margin: 8 auto; width:200px; float:right">
-    <input type="button" id=""  value="Master" onclick="newDoc()"  >
+    <div style="margin: 10 auto; width:200px;  float:right; position:absolute;top:40px;right:-5px; font-weight: 600;">
+    <input type="button" id=""  value="Master" onclick="newDoc()" >
     <input type="button" id=""  value="Transaction " onclick="" >       
     
     </div>
@@ -19,8 +49,10 @@
 
 }
     </script>
+   
     
-    <table class="table">
+    <table class="table" >
+        
 
         <thead>
             <tr>
@@ -60,5 +92,6 @@
     
 </div>
 {% endblock %}
+
 
 

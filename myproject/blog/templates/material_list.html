@@ -1,10 +1,41 @@
-{% extends "base.html" %}
+
 {% block content %}
+<style type="text/css">
+ 
+    table {
+    font-family: "Lato","sans-serif";   }       /* added custom font-family  */
+     
+    table.one {                                  
+    margin-bottom: 3em; 
+    border-collapse:collapse;   }   
+     
+    td {                            /* removed the border from the table data rows  */
+    text-align: center;     
+    width: 14em;                    
+    padding: 8px;;       }       
+     
+    th {                              /* removed the border from the table heading row  */
+    text-align: center;                 
+    padding: 8px;
+    background-color: #696464;       /* added a red background color to the heading cells  */
+    color: white;       }                 /* added a white font color to the heading text */
+     
+    tr {    
+    height: 1em;    }
+     
+    table tr:nth-child(even) {            /* added all even rows a #eee color  */
+        background-color: #eee;     }
+     
+    table tr:nth-child(odd) {            /* added all odd rows a #fff color  */
+    background-color:#fff;      }
+     
+    </style>
+    
 
 <div class="card-body">
 
     <h4 style="text-align: center;font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-    font-weight: bolder;">Material List</h4>
+    font-weight: bolder; font-size: 200%;">Material List</h4>
     <table class="table">
         <thead>
             <tr>
@@ -43,11 +74,12 @@
             {% endfor %}
         </tbody>
     </table>
-    <button type="button" onclick="create()">Create</button>
-    <button type="button" onclick="cancel()">Cancel</button>
+    <div style="margin: 40 auto; width:300px; float:center">
+    <button type="button" onclick="create()" style="width: 30%;height: 30px;width:100px;">Create</button>
+    <button type="button" onclick="cancel()" style="width: 30%;height: 30px;width:100px;">Cancel</button>
     <!-- <button type="button"><a  href="/create_material">Create</a></button> -->
     <!-- <button type="button"><a  href="/master_page">Cancel</a></button> -->
-    
+</div>
 </div>
 <script>
     function create(){
@@ -61,5 +93,6 @@
     
 </script>
 {% endblock %}
+
 
 

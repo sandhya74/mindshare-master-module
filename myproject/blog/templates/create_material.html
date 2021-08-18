@@ -152,22 +152,26 @@
             
             <div class="form-group">        
               <div class="col-sm-offset-2 col-sm-10">
-                <input type="submit" value="Submit" >
-                <input type="button" value="Cancel" onclick="cancel()"> 
+                <input type="submit" value="Submit" style="height: 30px;width:100px;">
+                <input type="button" value="Cancel" onclick="cancel()" style="height: 30px;width:100px;"> 
                     
 
                
             </div>
             </div>
-            <script>
-              function cancel() {
-                
-              window.location.assign("/material_list")
+
+    <script>
+
+        function cancel() 
+        {
+            window.location.assign("/material_list")
         
         }
-        function getVal(){
+
+        function getVal()
+        {
          
-         var max_lev=document.getElementById("Maximum_Level").value;
+          var max_lev=document.getElementById("Maximum_Level").value;
           var min_lev=document.getElementById("Minimum_Level").value;
           
           var max=parseInt(max_lev)
@@ -185,10 +189,13 @@
          
         }
 
-        function myFun(){
+        function myFun()
+        {
           document.getElementById("Material_Code").readOnly = true;
         }
-        function validate(){
+
+        function validate()
+        {
           var mat_code=document.getElementById("Material_Code").value;
           var code=' '+mat_code
           var projects = "{{materials}}";
@@ -214,12 +221,13 @@
         }
         }
 
-          </script>  
+   </script>  
 
 
 
       </div>
     </div>
     
+
 
 
