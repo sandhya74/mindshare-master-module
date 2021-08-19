@@ -30,22 +30,22 @@ th, td {
     
 
 
-        <td colspan="4" style="background-color: lightblue;" >Material Code : {{material.Material_Code}}<br>
-                        Material Name : {{material.Material_Name}} <br>
-                        Material Location : {{material.Material_Location}}<br>
-                        Unit of Measurement : {{material.Unit_of_Measurement}}<br>
+        <td colspan="4" style="background-color: lightblue;" ><b>Material Code : </b>{{material.Material_Code}}<br>
+                        <b>Material Name : </b>{{material.Material_Name}} <br>
+                        <b>Material Location : </b>{{material.Material_Location}}<br>
+                        <b>Unit of Measurement : </b>{{material.Unit_of_Measurement}}<br>
         </td>
-        <td colspan="4" style="background-color: lightblue;">Maximum Level : {{material.Maximum_Level}}<br>
-                        Minimum Level : {{material.Minimum_Level}}<br>
-                        Re-Order Level : {{material.Re_order_Level}}<br>
-                        Quantity : {{material.Quantity}}<br>
+        <td colspan="4" style="background-color: lightblue;"><b>Maximum Level : </b>{{material.Maximum_Level}}<br>
+                        <b>Minimum Level : </b>{{material.Minimum_Level}}<br>
+                        <b>Re-Order Level : </b>{{material.Re_order_Level}}<br>
+                        <b>Quantity : </b>{{material.Quantity}}<br>
         </td>
   </tr>
 
-  <tr style="background-color: #eee;">
+  <tr style="background-color: rgb(170, 166, 166);">
     <th>Date</th>
     <th>Doc.No</th>
-    <th>Received from</th>
+    <th>Received from/Issued To</th>
     <th>Receipt</th>
     <th>Issue</th>
     <th>Balance</th>
@@ -54,12 +54,12 @@ th, td {
   </tr>
   <tbody>
   {% for transact in transaction %}
-  <tr>
+  <tr style="background-color: #eee;">
     <td>{{transact.date}}</td>
     <td>{{transact.doc_no}}</td> 
 
     {% if transact.received_from == None %}
-    <td>-</td>
+    <td style="text-align: center;">-</td>
     {% else %}
     <td>{{transact.received_from}}</td>
     {% endif %}
@@ -67,7 +67,7 @@ th, td {
     <td>{{transact.receipt_no}}</td>
 
     {% if transact.issue == None %}
-    <td>-</td>
+    <td style="text-align: center;">-</td>
     {% else %}
     <td>{{transact.issue}}</td>
     {% endif %}
